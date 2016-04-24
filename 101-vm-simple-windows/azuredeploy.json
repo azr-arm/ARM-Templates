@@ -43,12 +43,6 @@
       }
     }
   },
-  "sizeOfEachDataDiskInGB": {
-    "type": "String",
-    "metadata": {
-      "description": "Size of each data disk in GB."
-    }
-  },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
     "sizeOfDiskInGB": "100",
