@@ -25,7 +25,7 @@
       "defaultValue": "West Europe",
       "allowedValues": [
         "West Europe",
-        "North Europe"
+        "North Europe"        
        ],
       "metadata": {
         "description": "Restricts choices to where premium storage is located in Europe."
