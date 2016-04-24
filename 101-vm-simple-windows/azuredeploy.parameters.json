@@ -2,14 +2,23 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "newStorageAccountName": {
+      "value": "JSON-Template-StorageACC"
+    },
     "adminUsername": {
       "value": "admin123"
     },
     "adminPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "Passw0rd!"
     },
     "dnsLabelPrefix": {
-      "value": "GEN-UNIQUE"
+      "value": "DNS-LABEL2016"
+    },
+    "location": {
+      "value": "West Europe"
+    },
+    "sizeOfDiskInGB": {
+      "value": "20"
     }
   }
 }

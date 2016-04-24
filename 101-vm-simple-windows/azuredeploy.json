@@ -20,6 +20,16 @@
         "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
       }
     },
+    "location": {
+      "type": "string",
+      "defaultValue": "West Europe",
+      "allowedValues": [
+        "North Europe"
+       ],
+      "metadata": {
+        "description": "Restricts choices to where premium storage is located in Europe."
+      }
+    },
     "windowsOSVersion": {
       "type": "string",
       "defaultValue": "2012-R2-Datacenter",
@@ -33,10 +43,16 @@
       }
     }
   },
+  "sizeOfEachDataDiskInGB": {
+    "type": "String",
+    "metadata": {
+      "description": "Size of each data disk in GB."
+    }
+  },
   "variables": {
     "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
     "sizeOfDiskInGB": "100",
-    "dataDisk1VhdName": "datadisk1",
+    "dataDisk1VhdName": "[concat('http://',parameters('newStorageAccountName'),'.blob.core.windows.net/',variables('vmStorageAccountContainerName'),'/',variables('vmName'),'dataDisk1.vhd')]",
     "imagePublisher": "MicrosoftWindowsServer",
     "imageOffer": "WindowsServer",
     "OSDiskName": "osdiskforwindowssimple",
@@ -54,7 +70,7 @@
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "apiVersion": "2015-06-15"
-  },
+ },
   "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
