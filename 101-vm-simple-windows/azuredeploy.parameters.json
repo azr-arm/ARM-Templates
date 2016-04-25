@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "newStorageAccountName": {
-      "value": "JSON-Template-StorageACC"
+      "value": "MyDeployStorageACC"
     },
     "adminUsername": {
-      "value": "admin123"
+      "value": "Charbel"
     },
     "adminPassword": {
       "value": "Passw0rd!"
     },
-    "dnsLabelPrefix": {
-      "value": "DNS-LABEL2016"
+    "dnsNameForPublicIP": {
+      "value": "Chmydepl3"
     },
     "location": {
       "value": "West Europe"
