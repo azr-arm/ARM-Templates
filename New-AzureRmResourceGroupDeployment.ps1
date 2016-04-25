@@ -3,11 +3,13 @@ Install-Module AzureRM
 
 Login-AzureRmAccount
 
+# Variables
 $LocName = "West Europe"
-$rgName = "MyDeploymentRG"
+$rgName = "MyDeploymentRG02"
 $deploymentName = "MyDeployment"
 $templatePath = "C:\GitHub\ARM-Templates\101-vm-simple-windows\azuredeploy.json"
 
+# New Azure Resource Group
 New-AzureRmResourceGroup -Name $rgName -Location $LocName
 
 # Create a deployment using inline parameters
@@ -23,7 +25,8 @@ New-AzureRmResourceGroupDeployment `
 
 # Create a deployment using a parameter object
 
-$parameters = @{"newStorageAccountName"="MyDeployStorageACC";"location"="West Europe";"adminUsername"="Charbel";"dnsLabelPrefix"="chmydepl2"}
+$parameters = @{"newStorageAccountName"="MyDeployStorageACC"; `
+"location"="West Europe";"adminUsername"="Charbel";"dnsLabelPrefix"="chmydepl2"}
 
 New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
@@ -39,15 +42,17 @@ New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
     -ResourceGroupName $rgName `
     -TemplateFile $templatePath `
-    -TemplateParameterObject $parameterFilePath
+    -TemplateParameterFile $parameterFilePath
 
 # Create a deployment using an online template
+
+$templateURI = "https://raw.githubusercontent.com/azr-arm/ARM-Templates/master/101-vm-simple-windows/azuredeploy.json"
 
 New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
     -ResourceGroupName $rgName `
-    -TemplateUri https://raw.githubusercontent.com/azr-arm/ARM-Templates/master/101-vm-simple-windows/azuredeploy.json `
-    -TemplateParameterObject $parameterFilePath
+    -TemplateUri $templateURI `
+    -TemplateParameterFile $parameterFilePath
 
 # Get and Remove AzureRm Resource Group
 

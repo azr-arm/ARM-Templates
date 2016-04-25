@@ -9,16 +9,13 @@
       "value": "Charbel"
     },
     "adminPassword": {
-      "value": "Passw0rd!"
+      "value": "DepL()VM@2016"
     },
     "dnsLabelPrefix": {
-      "value": "chmydepl3"
+      "value": "chmydepl4"
     },
     "location": {
       "value": "West Europe"
-    },
-    "sizeOfDiskInGB": {
-      "value": "20"
     }
   }
 }
