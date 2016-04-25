@@ -19,11 +19,11 @@ New-AzureRmResourceGroupDeployment `
     -newStorageAccountName "MyDeployStorageACC" `
     -location $LocName `
     -adminUsername "Charbel" `
-    -dnsLabelPrefix "Chmydepl1"
+    -dnsNameForPublicIP "Chmydepl1"
 
 # Create a deployment using a parameter object
 
-$parameters = @{"newStorageAccountName"="MyDeployStorageACC";"location"="West Europe";"adminUsername"="Charbel";"dnsLabelPrefix"="Chmydepl2"}
+$parameters = @{"newStorageAccountName"="MyDeployStorageACC";"location"="West Europe";"adminUsername"="Charbel";"dnsNameForPublicIP"="Chmydepl2"}
 
 New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
