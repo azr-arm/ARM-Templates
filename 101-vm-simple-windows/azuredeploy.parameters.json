@@ -11,8 +11,8 @@
     "adminPassword": {
       "value": "Passw0rd!"
     },
-    "dnsNameForPublicIP": {
-      "value": "Chmydepl3"
+    "dnsLabelPrefix": {
+      "value": "chmydepl3"
     },
     "location": {
       "value": "West Europe"

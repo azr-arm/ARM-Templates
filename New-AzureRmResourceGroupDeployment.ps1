@@ -19,11 +19,11 @@ New-AzureRmResourceGroupDeployment `
     -newStorageAccountName "MyDeployStorageACC" `
     -location $LocName `
     -adminUsername "Charbel" `
-    -dnsNameForPublicIP "Chmydepl1"
+    -dnsNameForPublicIP "chmydepl1"
 
 # Create a deployment using a parameter object
 
-$parameters = @{"newStorageAccountName"="MyDeployStorageACC";"location"="West Europe";"adminUsername"="Charbel";"dnsNameForPublicIP"="Chmydepl2"}
+$parameters = @{"newStorageAccountName"="MyDeployStorageACC";"location"="West Europe";"adminUsername"="Charbel";"dnsNameForPublicIP"="chmydepl2"}
 
 New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
@@ -46,7 +46,7 @@ New-AzureRmResourceGroupDeployment `
 New-AzureRmResourceGroupDeployment `
     -Name $deploymentName `
     -ResourceGroupName $rgName `
-    -TemplateFile https://raw.githubusercontent.com/azr-arm/ARM-Templates/master/101-vm-simple-windows/azuredeploy.json `
+    -TemplateUri https://raw.githubusercontent.com/azr-arm/ARM-Templates/master/101-vm-simple-windows/azuredeploy.json `
     -TemplateParameterObject $parameterFilePath
 
 # Get and Remove AzureRm Resource Group
