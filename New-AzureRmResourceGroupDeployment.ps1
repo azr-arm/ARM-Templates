@@ -5,7 +5,7 @@ Login-AzureRmAccount
 
 # Variables
 $LocName = "West Europe"
-$rgName = "MyDeploymentRG02"
+$rgName = "MyDeploymentRG04"
 $deploymentName = "MyDeployment"
 $templatePath = "C:\GitHub\ARM-Templates\101-vm-simple-windows\azuredeploy.json"
 
@@ -56,7 +56,7 @@ New-AzureRmResourceGroupDeployment `
 
 # Get and Remove AzureRm Resource Group
 
-Get-AzureRmResourceGroup -Name $rgName | Remove-AzureRmResourceGroup -Force
+Get-AzureRmResourceGroup | Remove-AzureRmResourceGroup -Force
 
 Remove-AzureRmResourceGroup -Name $rgName -Force
 
