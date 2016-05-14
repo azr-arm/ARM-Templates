@@ -1,0 +1,20 @@
+net use [drive letter] \\hybriditcampclassic01.file.core.windows.net\utilities /u:hybriditcampclassic01 [storage account access key]
+zL73TTL3r8rc89BfxGWdJg1s3p0IP+Vxaw8W7iy1GO/jF0iOd996lGCgzNdadEVZhJsY/c0ZvJYXKJi92ZDt5w==
+
+$context = New-AzureStorageContext -StorageAccountName hybriditcampclassic01 -StorageAccountKey zL73TTL3r8rc89BfxGWdJg1s3p0IP+Vxaw8W7iy1GO/jF0iOd996lGCgzNdadEVZhJsY/c0ZvJYXKJi92ZDt5w==
+$util = Get-AzureStorageShare -Context $context
+
+New-AzureStorageDirectory -Share $util -Path iometer
+
+Set-AzureStorageFileContent -Share $util -source C:\GitHub\LabFiles\Utils\iometer\iometer-setup.exe -path iometer
+
+Set-AzureStorageFileContent -Share $util -source C:\GitHub\LabFiles\Utils\iometer\iometer.icf -path iometer
+
+Net use * \\hybriditcampclassic01.file.core.windows.net\utilities /u:hybriditcampclassic01 zL73TTL3r8rc89BfxGWdJg1s3p0IP+Vxaw8W7iy1GO/jF0iOd996lGCgzNdadEVZhJsY/c0ZvJYXKJi92ZDt5w==
+
+
+
+New-AzureRmResourceGroupDeployment -Name ARMDeploy01 -ResourceGroupName HybridITCamp02 -TemplateParameterFile "C:\GitHub\LabFiles\AZBootCamp\Lab02\parameters.azuredeploy2basic.json" -TemplateFile "C:\GitHub\LabFiles\AZBootCamp\Lab02\azuredeploy2prem.json" -Verbose 
+
+New-AzureRmResourceGroupDeployment -Name ARMDeploy01 -ResourceGroupName HybridITCamp02 -TemplateParameterFile "C:\GitHub\LabFiles\AZBootCamp\Lab02\parameters.azuredeploy2prem.json" -TemplateFile "C:\GitHub\LabFiles\AZBootCamp\Lab02\azuredeploy2prem_adddisk.json" -Verbose
+

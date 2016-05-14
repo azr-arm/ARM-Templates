@@ -1,0 +1,32 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value":  "West Europe"
+    },
+    "newStorageAccountName": {
+      "value": "hybriditcamparmsa"
+    },
+    "adminUsername": {
+      "value": "charbel"
+    },
+    "adminPassword": {
+      "value": "210infra+1"
+    },
+    "dnsNameForPublicIP": {
+      "value": "armvm01"
+    },
+    "storageaccounttype":{
+      "value":"Premium_LRS"
+    },
+    "vmsize":{
+      "value":"Standard_DS1"
+    },
+    "storageuri":{
+      "value":"https://hybriditcamppremium01.blob.core.windows.net/"
+    }
+    
+  }
+}
+

@@ -1,0 +1,32 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value":  "West US"
+    },
+    "newStorageAccountName": {
+      "value": "azbootcamparmprem"
+    },
+    "adminUsername": {
+      "value": "abc_admin"
+    },
+    "adminPassword": {
+      "value": "Pa$$w0rd!"
+    },
+    "dnsNameForPublicIP": {
+      "value": "abcpremvm2"
+    },
+    "storageaccounttype":{
+      "value":"Premium_LRS"
+    },
+    "vmsize":{
+      "value":"Standard_DS1"
+    },
+    "storageuri":{
+      "value":"http://azbootcampbasic2370.blob.core.windows.net"
+    }
+    
+  }
+}
+
